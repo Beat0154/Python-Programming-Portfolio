@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Programming Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="python%202.png">
+    <script src="script.js"></script>
+</head>
+<body>
+<h1 class="header"><a href="http://shawnbeaton.com">Shawn's</a> Programming Portfolio</h1><img src="python.png">
+<p class="toptext">25 challenges each harder than the last.<br/> I must solve the riddle using Python <br/>I hope you agree my code is clean and readable<br/> The list of promlems is from <a target="_blank" href="https://adriann.github.io/programming_problems.html">Adriann</a></p>
+
+<h1>Basics</h1>
+<p>1. Write a program that prints ‘Hello World’ to the screen.</p>
+<button onclick="showmore('code1')">Show Code</button>
+
+<pre id="code1">print("hello world") 
+  
+<button onclick="showmore('result1')">Show Result</button></pre><pre id="result1">
+hello world
+</pre>
+   
+<p>2. Write a program that asks the user for their name and greets them with their name.</p>
+<button onclick="showmore('code2')">Show Code</button>
+
+<pre id="code2">name = input('Enter your name:')
+print('Hello, ' + name)
+
+<button onclick="showmore('result2')">Show Result</button></pre><pre id="result2">Enter your name: shawn
+Hello, Shawn
+</pre>
+
+<p>3. Modify the previous program such that only the users Alice and Bob are greeted with their names.</p>
+<button onclick="showmore('code3')">Show Code</button>
+
+<pre id="code3">name = input('Enter your name:')
+if name == "bob" or name == "alice":
+    print('Hello, ' + name) 
+    
+<button onclick="showmore('result3'), showmore('result3extra')">Show Result</button></pre>
+<pre id="result3">Enter your name: shawn</pre>
+<pre id="result3extra">Enter your name: alice
+Hello, alice</pre>
+
+<p>4. Write a program that asks the user for a number n and prints the sum of the numbers 1 to n. </p>
+<button onclick="showmore('code4')">Show Code</button>
+
+<pre id="code4">x = int(input("Enter a number: "))
+i = 0
+count = 0
+while i &lt; x + 1:
+    print(count)
+    count += i
+    i += 1
+    
+<button onclick="showmore('result4')">Show Result</button></pre><pre id="result4">Enter a number: 5
+0
+1
+3
+6
+10
+15
+</pre>
+ 
+<p>5. Modify the previous program such that only multiples of three or five are considered in the sum, e.g. 3, 5, 6, 9, 10, 12, 15 for n=17 </p>
+<button onclick="showmore('code5')">Show Code</button>
+
+<pre id="code5">x = int(input("Enter a number: "))
+i = 0
+count = 0
+while i &lt; x + 1:
+    i += 1
+    if i % 3 == 0 or i % 5 == 0:
+        print(count)
+        count += i
+
+<button onclick="showmore('result5')">Show Result</button></pre><pre id="result5">
+Enter a number: 15
+0
+3
+8
+14
+23
+33
+45
+
+</pre>
+
+<p>6. Write a program that asks the user for a number n and gives them the possibility to choose between computing the sum and computing the product of 1,…,n.</p>
+<button onclick="showmore('code6')">Show Code</button>
+
+<pre id="code6">x = int(input("Enter a number: "))
+choice = input("What would you like to compute? The sum (1) or the product (2): ")
+i = 1
+count = 1
+if choice == "1":
+    while i &lt; x + 1:
+        print(count)
+        i += 1
+        count += i
+if choice == "2":
+    while i &lt; x + 1:
+        print(count)
+        count = count * i
+        i += 1
+        
+<button onclick="showmore('result6'), showmore('result6extra')">Show Result</button></pre>
+<pre id="result6">Enter a number: 5
+What would you like to compute? The sum (1) or the product (2): 1
+1
+3
+6
+10
+15
+</pre>
+
+<pre id="result6extra">Enter a number: 6
+What would you like to compute? The sum (1) or the product (2): 2
+1
+2
+6
+24
+120
+</pre>
+  
+<p>7. Write a program that prints a multiplication table for numbers up to 12.</p>
+<button onclick="showmore('code7')">Show Code</button>
+<pre id="code7">i = 1
+while i &lt;= 12:
+    n = 1
+    while n &lt;= 12:
+        print("{} ".format(n*i), end='')
+        n += 1
+    i += 1
+    print()
+    
+<button onclick="showmore('result7')">Show Result</button></pre><pre id="result7">1 2 3 4 5 6 7 8 9 10 11 12 
+2 4 6 8 10 12 14 16 18 20 22 24 
+3 6 9 12 15 18 21 24 27 30 33 36 
+4 8 12 16 20 24 28 32 36 40 44 48 
+5 10 15 20 25 30 35 40 45 50 55 60 
+6 12 18 24 30 36 42 48 54 60 66 72 
+7 14 21 28 35 42 49 56 63 70 77 84 
+8 16 24 32 40 48 56 64 72 80 88 96 
+9 18 27 36 45 54 63 72 81 90 99 108 
+10 20 30 40 50 60 70 80 90 100 110 120 
+11 22 33 44 55 66 77 88 99 110 121 132 
+12 24 36 48 60 72 84 96 108 120 132 144</pre>
+  
+<p>8. Write a program that prints all prime numbers.</p>
+<button onclick="showmore('code8')">Show Code</button>
+
+<pre id="code8">primeNum = []
+for i in range(2, 100):
+    isPrime = True
+    for n in range(2, int(i ** 0.5) + 1):
+        if i % n == 0:
+            isPrime = False
+            break
+
+    if isPrime:
+        primeNum.append(i)
+
+print(primeNum)
+
+<button onclick="showmore('result8')">Show Result</button></pre><pre id="result8">[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]
+</pre>
+  
+<p>9. Write a guessing game where the user has to guess a secret number. After every guess the program tells the user whether their number was too large or too small. At the end the number of tries needed should be printed.</p>
+<button onclick="showmore('code9')">Show Code</button>
+
+<pre id="code9">secret = 69
+
+while True:
+    guess = int(input("Please guess a number(0-100): "))
+    if guess == secret:
+        print("You've guessed the secret number!")
+        break
+    if guess &gt; secret:
+        print("Go lower")
+    if guess &lt; secret:
+        print("Go higher")
+
+<button onclick="showmore('result9')">Show Result</button></pre><pre id="result9">
+Please guess a number(0-100): 50
+Go higher
+Please guess a number(0-100): 75
+Go lower
+Please guess a number(0-100): 65
+Go higher
+Please guess a number(0-100): 70
+Go lower
+Please guess a number(0-100): 69
+You've guessed the secret number!
+
+    
+</pre>
+  
+<p>10. Write a program that prints the next 20 leap years.</p>
+<button onclick="showmore('code10')">Show Code</button>
+
+<pre id="code10">year = 2019
+count = 0
+while count &lt; 20:
+    if ((year % 4 == 0 and year % 100 != 0) or (year % 400 == 0)):
+        print(year)
+        count += 1
+    year += 1
+
+<button onclick="showmore('result10')">Show Result</button></pre><pre id="result10">2020
+2024
+2028
+2032
+2036
+2040
+2044
+2048
+2052
+2056
+2060
+2064
+2068
+2072
+2076
+2080
+2084
+2088
+2092
+2096</pre>
+   
+<p>11. Write a program that prints an Easter Egg.</p>
+<button onclick="showmore('code11')">Show Code</button>
+
+<pre id="code11">yup = True
+while yup == True:
+    choice = input("Please enter a special character(@#$%&amp;): ")
+    if choice == "@" or choice == "#" or choice == "$" or choice == "%" or choice == "&amp;":
+        print("   __   ")
+        print("  /" + choice + choice + "\  ")
+        print(" /" + choice + choice + choice + choice + "\  ")
+        print(" |" + choice + choice + choice + choice + "| ")
+        print(" \____/")
+        break
+    else:
+        print("Please enter one of the accepted characters.")
+
+<button onclick="showmore('result11')">Show Result</button></pre><pre id="result11">Please enter a special character(@#$%&amp;): &amp;
+  /&amp;&amp;\  
+ /&amp;&amp;&amp;&amp;\  
+ |&amp;&amp;&amp;&amp;| 
+ \____/</pre>
+
+<h1>Lists &amp; Strings</h1>
+
+  
+<p>12. Write a function that returns the largest element in a list.</p>
+<button onclick="showmore('code12')">Show Code</button>
+
+<pre id="code12">myList = [1,2,3,4,5,6,7,8,9]
+print(max(myList))
+
+<button onclick="showmore('result12')">Show Result</button></pre><pre id="result12">9 </pre>
+ 
+<p>13. Write function that reverses a list, preferably in place.</p>
+<button onclick="showmore('code13')">Show Code</button>
+
+<pre id="code13">myList = [1,2,3,4,5,6,7,8,9]
+myList.reverse()
+print(myList)
+ 
+ <button onclick="showmore('result13')">Show Result</button></pre><pre id="result13">[9, 8, 7, 6, 5, 4, 3, 2, 1]
+</pre>
+ 
+<p>14. Write a function that checks whether an element occurs in a list.</p>
+<button onclick="showmore('code14')">Show Code</button>
+
+<pre id="code14">myList = [0,1,2,3,4,5,6,7,8,9]
+
+def locate(int, list):
+    for i in list:
+        if i == int:
+            print("it is in the list")
+            break
+    else:
+        print("it is not in the list")
+
+<button onclick="showmore('result14')">locate(8, myList)</button>
+<button onclick="showmore('result14extra')">locate(80, myList)</button></pre>
+<pre id="result14">it is in the list</pre>
+<pre id="result14extra">it is not in the list</pre>
+ 
+<p>15. Write a function that returns the elements on odd positions in a list.</p>
+<button onclick="showmore('code15')">Show Code</button>
+
+<pre id="code15">myList = [0,1,2,3,4,5,6,7,8,9]
+
+def oddPrint(list):
+    for i in list:
+        if i % 2 != 0:
+            print(list[i])
+
+<button onclick="showmore('result15')">oddPrint(myList)</button></pre><pre id="result15">1
+3
+5
+7
+9</pre>
+ 
+<p>16. Write a function that computes the running total of a list.</p>
+<button onclick="showmore('code16')">Show Code</button>
+
+<pre id="code16">myList = [0,1,2,3,4,5,6,7,8,9]
+
+def listCount(list):
+    count = 0
+    for i in list:
+        count += i
+    print(count)
+
+<button onclick="showmore('result16')">listCount(myList)</button></pre><pre id="result16">45</pre>
+ 
+<p>17. Write a function that tests whether a string is a palindrome.</p>
+<button onclick="showmore('code17')">Show Code</button>
+
+<pre id="code17">def isPalindrome(string):
+    string1 = string.lower()
+    string2 = string.lower() [::-1]
+    if string1 == string2:
+        print("Yes, it is a Palindrome")
+    else:
+        print("No, it is not a Palindrome")
+
+<button onclick="showmore('result17')">isPalindrome("Kayak")</button>
+<button onclick="showmore('result17extra')">isPalindrome("Shawn")</button></pre>
+<pre id="result17">Yes, it is a Palindrome</pre>
+<pre id="result17extra">No, it is not a Palindrome</pre>
+ 
+<p>18. Write three functions that compute the sum of the numbers in a list: using a for-loop, a while-loop and recursion.</p>
+<button onclick="showmore('code18')">Show Code</button>
+
+<pre id="code18">myList = [0,1,2,3,4,5,6,7,8,9]
+
+def sumForLoop(list):
+    count = 0
+    for i in list:
+        count += i
+    print(count)
+
+def sumWhileLoop(list):
+    count = 0
+    i = 0
+    while i &lt; len(list):
+        count += i
+        i += 1
+    print(count)
+
+def recursion(list, int):
+    if int &gt;= len(list):
+        return 0
+    print(list[int] + recursion(list, int + 1))
+
+<button onclick="showmore('result18')">sumForLoop(myList)</button>
+<button onclick="showmore('result18extra')">sumWhileLoop(myList)</button>
+<button onclick="showmore('result18extraextra')">recursion(myList, 8)</button></pre>
+<pre id="result18">45</pre>
+<pre id="result18extra">45</pre>
+<pre id="result18extraextra">45</pre>
+ 
+<p>19. Write a function on_all that applies a function to every element of a list. Use it to print the first twenty perfect squares. The perfect squares can be found by multiplying each natural number with itself. </p>
+<button onclick="showmore('code19')">Show Code</button>
+
+<pre id="code19">
+
+
+<button onclick="showmore('result19')">Show Result</button></pre><pre id="result18">
+</pre>
+<pre id="result19"></pre>
+ 
+<p>20. Write a function that concatenates two lists.</p>
+<button onclick="showmore('code20')">Show Code</button>
+
+<pre id="code20">list1 = [0,1,2,3,4]
+list2 = [5,6,7,8,9]
+list3 = list1 + list2
+
+<button onclick="showmore('result20')">print(list3)</button></pre><pre id="result20">
+    [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+</pre>
+ 
+<p>21. Write a function that combines two lists by alternatingly taking elements.</p>
+<button onclick="showmore('code21')">Show Code</button>
+
+<pre id="code21">list1 = [0,1,2,3,4]
+list2 = [5,6,7,8,9]
+list3 = [None]*(len(list1)+len(list2))
+list3[::2] = list1
+list3[1::2] = list2
+
+<button onclick="showmore('result21')">print(list3)</button></pre><pre id="result21">[0, 5, 1, 6, 2, 7, 3, 8, 4, 9]
+</pre>
+ 
+<p>22. Write a function that merges two sorted lists into a new sorted list.</p>
+<button onclick="showmore('code22')">Show Code</button>
+
+<pre id="code22">
+
+<button onclick="showmore('result22')">Show Result</button></pre><pre id="result22"></pre>
+ 
+<p>23. Write a function that rotates a list by k elements.</p>
+<button onclick="showmore('code23')">Show Code</button>
+
+<pre id="code23"><button onclick="showmore('result23')">Show Result</button></pre><pre id="result23"></pre>
+ 
+<p>24. Write a function that computes the list of the first 100 Fibonacci numbers. <p>
+<button onclick="showmore('code24')">Show Code</button>
+
+<pre id="code24">
+
+<button onclick="showmore('result24')">Show Result</button></pre><pre id="result24"></pre>
+ 
+<p>25. Write a function that takes a number and returns a list of its digits. </p>
+<button onclick="showmore('code25')">Show Code</button>
+
+<pre id="code25">number = input("Please enter a number: ")
+list = []
+for i in number:
+    list.append(i)
+print(list)  
+<button onclick="showmore('result25')">Show Result</button></pre><pre id="result25"></pre>
+   <br/><br/><br/><br/>
+    <a href="https://shawnbeaton.com">&larr;Go back to shawnbeaton.com</a>
+</body>
+</html>
